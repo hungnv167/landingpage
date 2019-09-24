@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|PT+Serif:400,400i,700,700i">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./javascripts.js"></script>
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="top-header">
+            <div class="icon">
+                <span>
+                    <a href="#">
+                        <img width="32" height="32"
+                            src="data:image/png;base64,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"
+                            alt="#">
+                    </a>
+                </span>
+                <span>
+                    <a href="#">
+                        <img width="32" height="32"
+                            src="data:image/png;base64,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"
+                            alt="#">
+                    </a>
+                </span>
+            </div>
+        </div>
+        <nav id="menu" class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent top">
+                <ul class="navbar-nav mr-auto container">
+                    <li class="nav-item">
+                        <a id="active" class="nav-link" href="#">Vientiane Rescue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#group-chapter-1">Chapter 1: Drunk, Driving & Dangerous</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#group-chapter-2">Chapter 2: The Volunteers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#group-chapter-3">Chapter 3: On The Frontline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#group-chapter-4">Chapter 4: Winding Down</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#group-talk">Let's Talk About It</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="vientiane">
+        <div class="bg-img"></div>
+        <div class="bg-shadow"></div>
+        <div class="text-title">
+            <h1>Vientiane Rescue</h1>
+            <em>The first and only Rescue Service of Vientiane,</em>
+            <br>
+            <em>Laos</em>
+        </div>
+    </div>
+    <div class="contributor">
+        <div class="contributor-img"></div>
+        <div class="contributor-shadow"></div>
+        <div class="contributor-text">
+            <strong>
+                <sup>
+                    <sub>CONTRIBUTORS</sub>
+                </sup>
+            </strong>
+            <br>
+            <strong>
+                <em>
+                    <sub>Thomas Cristofoletti</sub>
+                </em>
+            </strong>
+            <sub><br></sub>
+            <sup>
+                <sub>photographer</sub>
+            </sup>
+            <sub><br></sub>
+            <strong>
+                <em>
+                    <sub>Tsen-Waye Tay</sub>
+                </em>
+            </strong>
+            <sub><br></sub>
+            <sup>
+                <sub>producer & writer</sub>
+            </sup>
+            <sub><br></sub>
+            <strong>
+                <em>
+                    <sub>Stéphane-Thavideth Sivilay</sub>
+                </em>
+            </strong>
+            <sub><br></sub>
+            <sup>
+                <sub>fixer</sub>
+            </sup>
+            <sub><br></sub>
+            <strong>
+                <em>
+                    <sub>Chris Annadorai</sub>
+                </em>
+            </strong>
+            <sub><br></sub>
+            <sup>
+                <sub>executive producer</sub>
+            </sup>
+            <sub><br></sub>
+        </div>
+
+    </div>
+    <div class="chapter" id="group-chapter-1">
+        <div class="chapter-img"></div>
+        <div class="chapter-shadow"></div>
+        <div class="chapter-text">
+            <h4><sub>CHAPTER 1</sub></h4>
+            <h3><em>Drunk, Driving & Dangerous</em></h3>
+        </div>
+    </div>
+    <div class="full-window">
+        <div class="full-window-img"></div>
+        <div class="full-window-shadow"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-xl-6">
+                    <div class="context-text">
+                        <div class="div-text">
+                            <p>
+                                Under the glare of bright, white headlights and flashing purple-blue neon lights,
+                                emergency
+                                responders are attending to two youth, who had lost control of their motorbikes and
+                                crashed
+                                into
+                                a ditch. It is the first emergency call of the evening and the start of a typical night
+                                in
+                                the
+                                Laotian capital.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                Also at the scene is Sebastian Perret, a French paramedic and former firefighter, who
+                                with
+                                seven
+                                local volunteers, mostly teenagers, started <a href="#">Vientiane Rescue</a> in 2010. It
+                                remains the
+                                country’s
+                                only free, emergency responder service. With the rising affluence in Laos, the country’s
+                                roads
+                                have seen an increase in traffic, resulting in more accidents. According to the World
+                                Health
+                                Organisation, <a href="#">about 90 per cent of crashes</a> are due to drink-driving and
+                                speeding.
+                                Before
+                                Vientiane Rescue, Sébastien says that victims of serious accidents would often be left
+                                to
+                                die on
+                                the street.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                Across town, flashing, neon lights illuminate a different kind of nightlife - the
+                                darkened
+                                stage
+                                of a packed dance club. Venues like this draw a boisterous crowd looking for a good
+                                time.
+                                Alcohol lubricates the evening for many Laotians in their 20s and 30s. According to the
+                                World
+                                Health Organisation, Laos is the ​<a href="#">third biggest consumer of alcohol in
+                                    Southeast Asia​​</a>,
+                                with
+                                7.5 litres consumed per person per year.
+
+
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                Outside this club, a drunk, young man recovers on a sofa. Official sources state that
+                                ​<a href="#">underage drinking​</a> in Laos is common in restaurants and bars. Barriers
+                                to access are minimal with
+                                alcohol
+                                being affordable and easily available. In a move to promote health and safety among its
+                                residents, Vientiane’s Mayor has ​<a href="#">banned the sale of alcohol​​</a> ​or
+                                alcoholic beverages
+                                before
+                                4pm in the capital.
+
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                The ban might prevent people from drinking earlier in the day, but is unlikely to affect
+                                alcohol
+                                sales, as revellers usually consume alcohol after work. Before the night is up, tables
+                                at
+                                F&B
+                                outlets, like this, are littered with empty bottles.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                Motorcycles are the most popular form of transport in Vientiane. Many motorists are
+                                underaged or
+                                do not have a proper driving licence. They also tend to drive under the influence of
+                                alcohol,
+                                hence drunk driving is the leading cause of road fatalities in Laos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map">
+    </div>
+    <div class="full-window">
+        <div class="img-bg"></div>
+        <div class="shadow"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-xl-6">
+                    <div class="context-text">
+                        <div class="div-text">
+                            <p>
+                                Vientiane Rescue’s ambulances are dispatched 24/7 from four stations located near ‘hot
+                                spots’ across the city. Braving crowded road conditions, volunteer drivers weave in and
+                                out of busy traffic to get to a crash site within three to seven minutes. On a busy
+                                night, Vientiane Rescue’s trained first-aid and emergency medical services volunteers
+                                respond to an average of 20 calls.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                Accidents usually involve motorcyclists, and since helmets are seldom worn, the risk of
+                                getting seriously hurt is greater. Volunteers attend to varying severities of injuries;
+                                from minor cuts and scrapes to broken limbs and horrific accidents that end in death -
+                                as many as 50 a month. ​To date, Vientiane Rescue has saved more than 60,000 people -
+                                from just 300 in 2010 to over 15,000 in 2019.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​<a href="#">Vientiane Rescue​​</a> has touched the lives of people from all walks of
+                                life. Through the
+                                years, volunteers have earned the trust and respect of the community. The free emergency
+                                service is often the first and only place people turn to in an emergency. Besides road
+                                accidents, Vientiane Rescue’s teams also fight fires and deliver babies. This evening,
+                                volunteers respond to a domestic violence case, which would also involve local police.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chapter" id="group-chapter-2">
+        <div class="chapter-img-2"></div>
+        <div class="chapter-shadow"></div>
+        <div class="chapter-text">
+            <h4><sub>CHAPTER 2</sub></h4>
+            <h3><em>The Volunteers</em></h3>
+        </div>
+    </div>
+    <div class="full-window">
+        <div class="img-bg-chapter2"></div>
+        <div class="shadow"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-xl-6">
+                    <div class="context-text">
+                        <div class="div-text">
+                            <p>
+                                Even though road accidents are common in Vientiane, crash scenes still attract the
+                                morbid curiosity of bystanders. But for some who have witnessed one too many tragedies,
+                                it was no longer enough to stand by and do nothing. Instead, they were moved to make a
+                                difference, signing up as volunteers with Vientiane Rescue.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                A desire to “help others”, “save lives”, “make their city a safer place” and “to become
+                                better humans”. These are the most common reasons volunteers give to explain why they
+                                dedicate their free time to Vientiane Rescue. While there is a core team of about 60
+                                full-timers, many of the over 500 unpaid volunteers are students or juggle day jobs. One
+                                of them is Kik, 24, who is a cashier at a local bank during the day. Sébastien says
+                                dedicated volunteers like Kik, who display leadership skills, are what make Vientiane
+                                Rescue so special. He says they also look for qualities, such as professionalism,
+                                courage, solidarity, compassion, altruism, commitment and sacrifice. Uniforms are only
+                                given out to trainees who show up regularly for at least three months.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Sébastien also relies on the original group of founding members, who were teenagers
+                                when they started up Vientiane Rescue. Now in their early-to-mid-20s they have taken on
+                                more administrative roles, such as station deputy chief. Despite running the day-to-day
+                                operations at the stations, they continue to head out on emergency interventions with
+                                volunteers. Says Sébastien, “Being a good manager is not sitting behind a desk, it's
+                                being with the team inside the ambulances. So each of us continues to work on the roads,
+                                less often, but still.” Their loyalty to Vientiane Rescue all these years is due to
+                                their steadfast belief in the importance of the service they provide. Plus, “they also
+                                like it,” says Sébastien. “And you can’t get respect if you don't show your commitment.”
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="img-content">
+    </div>
+    <div class="full-window">
+        <div class="img-bg-chapter2-chil"></div>
+        <div class="shadow"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-xl-6">
+                    <div class="context-text">
+                        <div class="div-text">
+                            <p>
+                                Johnson is no stranger to high-stress situations. The 25-year-old volunteer is a
+                                commercial pilot with Lao Skyway. He signed up to volunteer with Vientiane Rescue after
+                                witnessing one too many accidents. He says that the law prevents people without the
+                                necessary qualifications to assist accident victims. This motivated him to get proper
+                                training. He is a qualified emergency medical technician (EMT) and is also a diving
+                                instructor. Fearing for his safety, his parents were initially against him volunteering.
+                                But after hearing his stories of rescue and bravado, are ardent supporters now. The
+                                greatest reward from saving lives is when victims recover and return to say, ‘Thank
+                                You.’ Johnson says the feeling is comparable to landing a plane flawlessly.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                A father-of-three, Ai has volunteered with Vientiane Rescue for two-and-a-half years.
+                                The decision to join the team was precipitated by a loss in the family. His
+                                sister-in-law died in an accident six years ago, because no one rescued her in time. The
+                                engineer works at an international hotel chain managing its fire safety and gas system.
+                                Ai has become an indispensable addition to the team. He also represents Vientiane Rescue
+                                to train local firefighters. Here he prepares a training presentation, with the help of
+                                his son, Ton.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Ton was so inspired by his father's passion that he asked to become a volunteer at 11
+                                years old. He now volunteers two to three times a week, sometimes without his dad.
+                                Father and son have dinner with the rest of the family, before heading out for their
+                                shift at Dong Dok station.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​The number of badges on Ai's uniform is testament to his achievements over the years.
+                                He is now in charge of the diving, fire and rope rescue teams. His interest in first aid
+                                and rescue was nurtured since young. And he continues to develop his skills by
+                                continually training.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​In order to continue with Vientiane Rescue, Ton has proven to his parents that he can
+                                juggle school work and volunteering. His commitment is clear, becoming one of the
+                                youngest volunteers to complete EMT training. Ai says he is proud to see his son mature
+                                over the years, and believes that first aid rescue has taught him the importance of
+                                responsible driving.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​All's quiet for now at Dong Dok station, where Kik, Johnson, Ai and Ton volunteer. Dong
+                                Dok is the largest of four stations run by Vientiane Rescue in the capital. They also
+                                have one station in the southern city of Pakse, and two in the northern part of the
+                                country in Vang Vieng and Xieng Khouang. Across all seven stations, it has 20 ambulances
+                                and two fire trucks.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Ai and Ton check the pressure of the station's supply of oxygen tanks to make sure they
+                                function properly. When the dam collapsed in southeast Laos in 2018, Ai took leave from
+                                his job to represent Vientiane Rescue during the search and rescue operation. He says
+                                there were moments he feared for the lives of his team of volunteers, as they had to
+                                search for survivors in the river at near zero visibility. There was also the lurking
+                                threat of unexploded ordnance (UXO) spread across the area by the floods. But Ai
+                                understood that risking their lives was integral to what they signed up for as first
+                                responders.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Johnson joins Ai and Ton at Dong Dok station, and starts his shift on a celebratory
+                                note. He surprises call centre manager Mimi with a birthday cake. The fun ends abruptly
+                                when the phones start ringing. Before she could cut her cake, Mimi dashes back to the
+                                room to handle the calls.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Mimi, 25, is in her element as she straddles the emergency calls and dispatches the
+                                ambulances from the station nearest the accident site. The call centre receives some 500
+                                calls a month. Even as a paid full-timer, Mimi continues to volunteer her spare hours to
+                                respond to accidents. One of the things she enjoys most is to deliver babies. Mimi has
+                                dedicated the past five years of her life to Vientiane Rescue and acts as a big sister
+                                to other volunteers. She says before Vientiane Rescue, she used to stay out late and
+                                party a lot. Since then, she has become more serious and likes herself better. Although
+                                she lives at Dong Dok permanently, she returns to her family home regularly. Her dream
+                                is to work at Vientiane Rescue indefinitely. The best part of her job? Interacting with
+                                people from different backgrounds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chapter" id="group-chapter-3">
+        <div class="chapter-img-3"></div>
+        <div class="chapter-shadow"></div>
+        <div class="chapter-text">
+            <h4><sub>CHAPTER 3</sub></h4>
+            <h3><em>On The Frontline</em></h3>
+        </div>
+    </div>
+    <div class="full-window">
+        <div class="img-bg-chapter3"></div>
+        <div class="shadow"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-xl-6">
+                    <div class="context-text">
+                        <div class="div-text">
+                            <p>
+                                Johnson is sent out on his first emergency of the night. He replaces the cake in his
+                                hand with the radio receiver in the ambulance, which receives updates from Mimi at Dong
+                                Dok station, as the team heads out on their rescue mission.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                At the wheel next to Johnson, Ai skillfully manoeuvres confidently through rush-hour
+                                traffic as fast as he can. It can be risky and harrowing when other drivers on the road
+                                break the law, for example, by speeding or skipping red lights.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Thankfully, the accident isn’t serious, and the team quickly transfers the shaken
+                                victim, a motorcyclist, onto the stretcher. Back in the ambulance, it is a family affair
+                                with Ai driving the team to the nearest hospital and Ton in the back chatting and
+                                watching over the patient.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Back at Dong Dok station, Kik has just arrived for her shift. Trained as an EMT, she is
+                                in charge of advising and briefing newcomers and teaching them first aid. The most
+                                regular advice she gives her volunteers is “to put their heart” in to what they are
+                                doing. And reminds them that it is “not a game”, because they have people’s lives in
+                                their hands. Since joining the Vientiane Rescue team, Kik says she has matured in her
+                                thinking and behaviour and is better able to adapt to strangers.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​But Kik’s quiet night ends soon enough when an emergency call comes in. She hops into
+                                the ambulance with her team and preps them from the front seat.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​A self-confessed risk-taker, Kik is in her element in the thick of the action. Her
+                                steely concentration is nothing less than admirable. She directs her team of volunteers
+                                to move the victim onto a stretcher after wrapping a brace around his neck. The young
+                                driver is semi-conscious and visibly drunk after crashing his motorbike into the side of
+                                the road.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Following administrative processes to the letter is key to ensuring all accident
+                                victims Vientiane Rescue delivers to the hospital are given the best chances of
+                                surviving their injuries. For this volunteer, it means referring to the scribbled notes
+                                on her hand when filling in a detailed report about the accident.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Johnson joins Ai and Ton at Dong Dok station, and starts his shift on a celebratory
+                                note. He surprises call centre manager Mimi with a birthday cake. The fun ends abruptly
+                                when the phones start ringing. Before she could cut her cake, Mimi dashes back to the
+                                room to handle the calls.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​At the hospital, Sébastien chats with volunteers after dropping off an accident
+                                survivor at A&E. Having lived in the country for nearly a decade, his command of Lao is
+                                fairly strong and has developed a relaxed and jovial relationship with the volunteers.
+                                Their camaraderie is evident. Over the years, Sébastien and his teams have also built a
+                                respectful relationship with staff at the local hospitals, like Friendship Hospital.
+                                This has helped to improve the survival rate of accident victims, which has improved
+                                morale among volunteers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chapter" id="group-chapter-4">
+        <div class="chapter-img-4"></div>
+        <div class="chapter-shadow"></div>
+        <div class="chapter-text">
+            <h4><sub>CHAPTER 4</sub></h4>
+            <h3><em>Winding Down</em></h3>
+        </div>
+    </div>
+    <div class="full-window">
+        <div class="img-bg-chapter4"></div>
+        <div class="shadow"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-xl-6">
+                    <div class="context-text">
+                        <div class="div-text">
+                            <p>
+                                After another hectic night, it's time to fill up on piping hot bowls of noodle soup.
+                                Sébastien takes his volunteers out for supper at a popular street side stall. He cares
+                                deeply for his volunteers and worries about their future, particularly for those who
+                                volunteer full-time with Vientiane Rescue. He wants an equitable life for them. This
+                                means finding more avenues of funding so he can pay full-timers a living wage. So far,
+                                the service has been supported by private donations​, and operates on a tight budget of
+                                US$5,000 a month.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Back at the station, the rest of the volunteers return from their rescue missions, and
+                                catch up over a home-cooked dinner. The atmosphere is light and filled with laughter,
+                                showing a deep bond between them strengthened by the sheer amount of time they spend
+                                together. Their friendships help to soften the often bloody scenes they see every day.
+                                Sébastien says that when the people they save and their families donate items to the
+                                stations to show their gratitude, the thoughtfulness raises the spirits of volunteers
+                                and gives them the impetus to continue to save lives. In fact, many volunteers say they
+                                cannot imagine ever leaving Vientiane Rescue, their second family.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Some of these friendships have blossomed into romances. Exhausted from a long day at
+                                the office, Kik decides to have an early night. Before heading to bed, she video calls
+                                her fiance, who is also a volunteer with Vientiane Rescue. He was part of the 2018 cave
+                                rescue team in Chiang Rai, Thailand. Kik says he was coaching and advising her when she
+                                first joined. Their shared experiences and interest in helping people has brought them
+                                closer and made it easier for their relationship to succeed.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                ​Vientiane Rescue volunteers each have their own private space in the dorms at each
+                                station. But those still on shift find any chance they can get to take a quick nap
+                                during lull periods. This helps them stay alert after a long day when an emergency comes
+                                in the dead of the night.
+                            </p>
+                        </div>
+                        <div class="div-text">
+                            <p>
+                                A new day rolls in at Dong Dok station, and it is Mimi’s turn to surprise another
+                                volunteer with a birthday cake. The burning candles light up the smiling faces in the
+                                darkened room. Within the huddle of this touching moment, the future of the Vientiane
+                                Rescue family looks bright. Sébastien believes that the service will live on as long as
+                                volunteers continue to take pride in and ownership of Vientiane Rescue.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="talk-about" id="group-talk">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-6 col-xl-6"></div>
+                <div class="col col-lg-6 col-xl-6">
+                    <div class="text-title">
+                        <h4>Let’s Talk About It</h4>
+                        <p>What can we do to encourage responsible drinking in Vientiane?</p>
+                    </div>
+                    <div class="text-title">
+                        <h4>About Vientiane Rescue</h4>
+                        <p>Vientiane Rescue is a volunteer-run rescue service in Vientiane, Laos. They are the largest
+                            such service in the country, responding to over 5,760 road accidents annually (2015
+                            figures). Made up of over 200 volunteers, 8 ambulances, a fire-fighting unit, a scuba rescue
+                            team as well as hydraulic rescue and excavation teams, Vientiane Rescue has grown to over
+                            200 volunteers working from 4 different locations in Vientiane.
+                        </p>
+                        <p>
+                            Vientiane Rescue was among the 6 recipients of the 2016 Ramon Magsaysay Award, commonly
+                            regarded as Asia's equivalent of the Nobel Prize. According to the jury, the award
+                            “recognizes its heroic work in saving Laotian lives in a time and place of great need, under
+                            the most deprived of circumstances, inspiring by their passionate humanitarianism a similar
+                            generosity of spirit in many others.” The jury further commented that in responding to
+                            between 15 - 30 accidents a day, Vientiane Rescue helped save an estimated 10,000 lives
+                            between 2011 and 2015.
+                        </p>
+                        <p>
+                            In November 2016, French President François Hollande presented Sébastien Perret and
+                            Vientiane Rescue with the La France S’engage Award at a ceremony in Paris.
+                        </p>
+                        <i>source</i>: <a href="#">Wikipedia​</a>
+                    </div>
+                    <div class="text-title">
+                        <h4>Take Action</h4>
+                        <p>You can help Vientiane Rescue. Every donation goes towards the purchase of vital medical
+                            supplies and equipment.</p>
+                    </div>
+                    <button class="div-botton">
+                        <a href="#">donate</a>
+                    </button>
+                    <div class="text-title">
+                        <h4>Related Topics</h4>
+                        <a href="#">Volunteering</a>
+                        <a href="#">Empowerment </a>
+                        <a href="#"> Responsible Drinking</a>
+                        <a href="#">Road Safety</a>
+                    </div>
+                    <div class="text-title">
+                        <img src="https://media.shorthand.com/media/organisations/M0QNnc1ojf/KIQlng5ov4/obw-logo-white-596x333.png"
+                            alt="#">
+                        <p>Our Better World is the digital storytelling initiative of the <a href="#">Singapore
+                                International Foundation</a> which brings world communities together to do good.
+                        </p>
+                    </div>
+                    <hr>
+                    <div class="text-title">
+                        <a href="#">© 2019 Our Better World</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="icon-top">
+                <a id="button" href="#top">Top</a>
+            </div>
+            <div class="left-footer">
+                <img src="https://media.shorthand.com/media/created-with-shorthand.png" alt="#">
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
