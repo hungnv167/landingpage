@@ -1,6 +1,31 @@
 document.addEventListener("DOMContentLoaded", function(){
     var chapter1 = document.querySelector('.full-window-img');
     var chapter2 = document.querySelector('.img-bg-chapter2-chil');
+    var buttonMobile = document.querySelector('.btn-menu');
+    var line = document.getElementsByClassName('line');
+    var collapse = document.querySelector('.collapse');
+    var nav = document.getElementsByTagName('nav');
+    var trangthai = 'on';
+    buttonMobile.addEventListener('click', function(){
+        line[0].classList.toggle('line-f');
+        line[1].classList.toggle('remove');
+        line[2].classList.toggle('line-l');
+        collapse.classList.toggle('showMenu');
+        // nav[0].classList.toggle('showMenu');
+        if(trangthai=='on'){
+            trangthai = 'off';
+            nav[0].classList.add('showMenu');
+            nav[0].classList.remove('animate-right');
+            nav[0].classList.add('animate-left');
+        }
+        else{
+            nav[0].classList.remove('showMenu');
+            nav[0].classList.remove('animate-left');
+            nav[0].classList.add('animate-right');
+            trangthai = 'on'
+        }
+        
+    })
     window.addEventListener('scroll',function(){
         if(window.pageYOffset <= 1900){
             chapter1.setAttribute('style','position: absolute;background-image: url(https://media.shorthand.com/media/organisations/M0QNnc1ojf/lIWhKDJJn8/001-1920x1080.jpeg)')

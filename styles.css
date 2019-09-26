@@ -5,6 +5,7 @@ body, html {
 }
 .header{
     width: 100%;
+    height: auto;
     position: fixed;
     z-index: 1000;
 }
@@ -17,7 +18,7 @@ body, html {
     align-items: center;
 }
 .top-header .icon {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 nav{
     height: 36px;
@@ -39,11 +40,16 @@ nav{
 #active{
     color: #ffffff !important;
 }
+.wrapper{
+    width: 100%;
+    
+}
 .vientiane{
     position: relative;
     width: 100%;
     height: 100%;
     z-index: 10;
+    box-sizing: border-box;
 }
 .vientiane .bg-img{
     position: absolute;
@@ -136,6 +142,7 @@ nav{
 
 /* chapter1    */
 .chapter{
+    box-sizing: border-box;
     width: 100%;
     position: relative;
     height: 500px;
@@ -184,6 +191,7 @@ nav{
 /* full-window */
 
 .full-window{
+    box-sizing: border-box;
     width: 100%;
     height: auto;
     position: relative;
@@ -342,6 +350,8 @@ nav{
 .talk-about{
     background-color: #222;
     color: #ffffff;
+    width: 100%;
+    height: auto;
     padding-top: 60px;
 }
 .text-title{
@@ -435,4 +445,161 @@ footer .left-footer img{
     width: 16px;
     margin-left: -8px;
     border-color: #777777;
+}
+/* mobile */
+.showMenu {
+    display: block !important;
+}
+
+.line{
+    height: 4px;
+    background-color: #000000;
+    width: 32px;
+    border-radius: 3px;
+}
+.btn-menu{
+    display: none;
+}
+.line-f{
+    width: 40px;
+    transform: rotate(45deg) translateY(8px) translateX(3px);
+}
+.line-l{
+    width: 40px;
+    transform: rotate(-45deg) translateY(-8px) translateX(3px);
+}
+.remove{
+    display: none !important;
+}
+@keyframes animatie1{
+    0% {transform: translateX(100%)}
+    100% {transform: translateX(0%)}
+}
+@keyframes animatie2{
+    100% {transform: translateX(100%)}
+    0% {transform: translateX(0)}
+}
+.animate-left{
+    animation: animatie1 0.3s forwards;
+}
+.animate-right{
+    animation: animatie2 0.3s forwards !important;
+}
+@media only screen and (max-width: 768px) {
+    .top-header{
+        height: 40px;
+    }
+    .header{
+        width: 100%;
+        height: 100%;
+    }
+    nav {
+        height: auto;
+        display: none !important;
+        transform: translateX(100%);
+        margin: 0;
+        padding: 0 !important;
+    }
+    .container{
+        padding-right: 0;
+    }
+    .nav-item{
+        width: 100%;
+        height: 53px;
+        border-bottom: 1px solid rgba(180,180,180,.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-item a{
+        font-size: 17px;
+    }
+    .vientiane{
+        width: 100%;
+    }
+    .vientiane .bg-img{
+        background-position: 50% 0;
+        background-size: cover;
+        width: 100%;
+    }
+    .vientiane .text-title{
+        right: 30px;
+        top: 40%;
+    }
+    .vientiane .text-title h1{
+        font-size: 55px;
+    }
+    .vientiane .text-title em {
+        font-size: 33px;
+    }
+    
+    #menu{
+        width: 50%;
+        height: 100%;
+    }
+    .btn-menu{
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-right: 20px;
+        box-sizing: border-box;
+    }
+    .contributor .contributor-text{
+        right: 30px;
+    }
+    .chapter-text{
+        left: 10%;
+        width: 90%;
+    }
+    .chapter-text h4{
+        font-size: 22px;
+    }
+    .chapter-text h3{
+        font-size: 43px;
+    }
+    .chapter-img,.full-window .img-bg,.chapter-img-2,.img-bg-chapter2, .img-content, .img-bg-chapter2-chil,.chapter-img-3,.img-bg-chapter3,.chapter-img-4,.img-bg-chapter4{
+        background-size: cover;
+        background-position: center;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .top-header{
+        height: 40px;
+    }
+    
+    #menu{
+        width: 100%;
+        height: 100%;
+    }
+    .vientiane .text-title h1{
+        font-size: 30px;
+    }
+    .vientiane .text-title em {
+        font-size: 18px;
+    }
+    .contributor .contributor-text{
+        right: 20px;
+    }
+    .contributor .contributor-text strong sup sub{
+        font-size: 9px;
+    }
+    .contributor .contributor-text strong em sub{
+        font-size: 13px;
+    }
+    .contributor .contributor-text sup sub{
+        font-size: 8px;
+        top: 20px;
+    }
+    .chapter-text h4{
+        font-size: 15px;
+    }
+    .chapter-text h3{
+        font-size: 25px;
+    }
+    .div-text p{
+        font-size: 17px;
+    }
 }
