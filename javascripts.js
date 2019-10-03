@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var line = document.getElementsByClassName('line');
     var collapse = document.querySelector('.collapse');
     var nav = document.getElementsByTagName('nav');
+    
     var trangthai = 'on';
     buttonMobile.addEventListener('click', function(){
         line[0].classList.toggle('line-f');
@@ -15,8 +16,18 @@ document.addEventListener("DOMContentLoaded", function(){
         if(trangthai=='on'){
             trangthai = 'off';
             nav[0].classList.add('showMenu');
-            nav[0].classList.remove('animate-right');
-            nav[0].classList.add('animate-left');
+            if (window.screen.width <= 1024 && window.screen.width >= 768) {
+                nav[0].classList.remove('animate-right');
+                nav[0].classList.add('animate-left');
+                nav[0].classList.remove('animate-left1');
+
+            }
+            if (window.screen.width < 768){
+                nav[0].classList.remove('animate-right');
+                nav[0].classList.remove('animate-left');
+                nav[0].classList.add('animate-left1');
+
+            }        
         }
         else{
             nav[0].classList.remove('showMenu');

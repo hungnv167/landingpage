@@ -472,18 +472,73 @@ footer .left-footer img{
     display: none !important;
 }
 @keyframes animatie1{
-    0% {transform: translateX(100%)}
-    100% {transform: translateX(0%)}
+    0% {transform: translateX(200%)}
+    100% {transform: translateX(100%)}
 }
 @keyframes animatie2{
     100% {transform: translateX(100%)}
     0% {transform: translateX(0)}
 }
+@keyframes animatie3{
+    0% {transform: translateX(100%)}
+    100% {transform: translateX(0%)}
+}
 .animate-left{
     animation: animatie1 0.3s forwards;
 }
+.animate-left1{
+    animation: animatie3 0.3s forwards;
+}
 .animate-right{
     animation: animatie2 0.3s forwards !important;
+}
+@keyframes animate3{
+    0%{ transform: translateX(100%)}
+    100%{ transform: translateX(0%)}
+}
+.animate-mobile{
+    animation: animate3 0.3s forwards;
+}
+@media only screen and (max-width: 1024px){
+    .header{
+        width: 100%;
+        height: 100%;
+    }
+    .btn-menu{
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-right: 20px;
+        box-sizing: border-box;
+    }
+    nav {
+        height: 100%;
+        display: none !important;
+        margin: 0;
+        padding: 0 !important;
+        width: 50%;
+    }
+    .container{
+        padding-right: 0;
+    }
+    .navbar-nav{
+        display: flex;
+        flex-direction: column !important;
+    }
+    .nav-item{
+        width: 100%;
+        height: 53px;
+        border-bottom: 1px solid rgba(180,180,180,.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-item a{
+        font-size: 17px;
+    }
 }
 @media only screen and (max-width: 768px) {
     .top-header{
@@ -496,7 +551,7 @@ footer .left-footer img{
     nav {
         height: auto;
         display: none !important;
-        transform: translateX(100%);
+        /* transform: translateX(200%); */
         margin: 0;
         padding: 0 !important;
     }
@@ -569,7 +624,9 @@ footer .left-footer img{
     .top-header{
         height: 40px;
     }
-    
+    nav {
+        transform: translateX(100%);
+    }
     #menu{
         width: 100%;
         height: 100%;
