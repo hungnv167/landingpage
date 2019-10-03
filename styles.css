@@ -22,6 +22,7 @@ body, html {
 }
 nav{
     height: 36px;
+    
 }
 #menu {
     background-color: rgba(34,34,34,.9) !important;
@@ -476,12 +477,16 @@ footer .left-footer img{
     100% {transform: translateX(100%)}
 }
 @keyframes animatie2{
-    100% {transform: translateX(100%)}
-    0% {transform: translateX(0)}
+    0% {transform: translateX(100%)}
+    100% {transform: translateX(200%)}
 }
 @keyframes animatie3{
     0% {transform: translateX(100%)}
     100% {transform: translateX(0%)}
+}
+@keyframes animatie4{
+    0% {transform: translateX(0%)}
+    100% {transform: translateX(100%)}
 }
 .animate-left{
     animation: animatie1 0.3s forwards;
@@ -490,7 +495,10 @@ footer .left-footer img{
     animation: animatie3 0.3s forwards;
 }
 .animate-right{
-    animation: animatie2 0.3s forwards !important;
+    animation: animatie2 0.3s forwards;
+}
+.animate-right1{
+    animation: animatie4 0.3s forwards;
 }
 @keyframes animate3{
     0%{ transform: translateX(100%)}

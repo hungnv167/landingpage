@@ -11,30 +11,60 @@ document.addEventListener("DOMContentLoaded", function(){
         line[0].classList.toggle('line-f');
         line[1].classList.toggle('remove');
         line[2].classList.toggle('line-l');
-        collapse.classList.toggle('showMenu');
-        // nav[0].classList.toggle('showMenu');
-        if(trangthai=='on'){
-            trangthai = 'off';
-            nav[0].classList.add('showMenu');
-            if (window.screen.width <= 1024 && window.screen.width >= 768) {
+        // collapse.classList.toggle('showMenu');
+        if (window.screen.width <= 1024 && window.screen.width >= 768) {
+            if(trangthai == 'on'){
+                trangthai = 'off';
+                nav[0].classList.add('showMenu');
                 nav[0].classList.remove('animate-right');
                 nav[0].classList.add('animate-left');
                 nav[0].classList.remove('animate-left1');
-
             }
-            if (window.screen.width < 768){
-                nav[0].classList.remove('animate-right');
+            else if( trangthai == 'off'){
+                trangthai = 'on';
                 nav[0].classList.remove('animate-left');
+                nav[0].classList.add('animate-right');
+                nav[0].classList.remove('animate-right1');
+            }  
+        }
+        if (window.screen.width < 768){        
+            if(trangthai == 'on'){
+                trangthai = 'off';
+                nav[0].classList.add('showMenu');
+                nav[0].classList.remove('animate-right');
                 nav[0].classList.add('animate-left1');
+                nav[0].classList.remove('animate-left');
+            }
+            else if( trangthai == 'off'){
+                trangthai = 'on';
+                nav[0].classList.remove('animate-left');
+                nav[0].classList.add('animate-right1');
+                nav[0].classList.remove('animate-right');
+            }  
+        }  
+        // nav[0].classList.toggle('showMenu');
+        // if(trangthai=='on'){
+        //     trangthai = 'off';
+        //     nav[0].classList.add('showMenu');
+        //     if (window.screen.width <= 1024 && window.screen.width >= 768) {
+        //         nav[0].classList.remove('animate-right');
+        //         nav[0].classList.add('animate-left');
+        //         nav[0].classList.remove('animate-left1');
 
-            }        
-        }
-        else{
-            nav[0].classList.remove('showMenu');
-            nav[0].classList.remove('animate-left');
-            nav[0].classList.add('animate-right');
-            trangthai = 'on'
-        }
+        //     }
+        //     if (window.screen.width < 768){
+        //         nav[0].classList.remove('animate-right');
+        //         nav[0].classList.remove('animate-left');
+        //         nav[0].classList.add('animate-left1');
+
+        //     }        
+        // }
+        // else{
+        //     nav[0].classList.remove('showMenu');
+        //     nav[0].classList.remove('animate-left');
+        //     nav[0].classList.add('animate-right');
+        //     trangthai = 'on'
+        // }
         
     })
     window.addEventListener('scroll',function(){
