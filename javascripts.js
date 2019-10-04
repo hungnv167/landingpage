@@ -16,30 +16,36 @@ document.addEventListener("DOMContentLoaded", function(){
             if(trangthai == 'on'){
                 trangthai = 'off';
                 nav[0].classList.add('showMenu');
-                nav[0].classList.remove('animate-right');
                 nav[0].classList.add('animate-left');
+                nav[0].classList.remove('animate-right');
+                nav[0].classList.remove('animate-right1');
                 nav[0].classList.remove('animate-left1');
             }
             else if( trangthai == 'off'){
                 trangthai = 'on';
-                nav[0].classList.remove('animate-left');
                 nav[0].classList.add('animate-right');
                 nav[0].classList.remove('animate-right1');
+                nav[0].classList.remove('animate-left');
+                nav[0].classList.remove('animate-left1');
+
             }  
         }
         if (window.screen.width < 768){        
             if(trangthai == 'on'){
                 trangthai = 'off';
                 nav[0].classList.add('showMenu');
-                nav[0].classList.remove('animate-right');
                 nav[0].classList.add('animate-left1');
+                nav[0].classList.remove('animate-right1');
                 nav[0].classList.remove('animate-left');
+                nav[0].classList.remove('animate-right');
+
             }
             else if( trangthai == 'off'){
                 trangthai = 'on';
                 nav[0].classList.remove('animate-left');
                 nav[0].classList.add('animate-right1');
                 nav[0].classList.remove('animate-right');
+                nav[0].classList.remove('animate-left1');
             }  
         }  
         // nav[0].classList.toggle('showMenu');

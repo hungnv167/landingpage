@@ -524,7 +524,6 @@ footer .left-footer img{
     }
     nav {
         height: 100%;
-        display: none !important;
         margin: 0;
         padding: 0 !important;
         width: 50%;
@@ -549,6 +548,9 @@ footer .left-footer img{
     }
 }
 @media only screen and (max-width: 768px) {
+    .collapse{
+        display: block !important;
+    }
     .top-header{
         height: 40px;
     }
@@ -559,7 +561,7 @@ footer .left-footer img{
     nav {
         height: auto;
         display: none !important;
-        /* transform: translateX(200%); */
+        transform: translateX(200%);
         margin: 0;
         padding: 0 !important;
     }
